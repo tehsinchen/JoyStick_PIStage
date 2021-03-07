@@ -3,7 +3,7 @@
 In this work, the joystick made by tkinter controls the PI stage.
 ![image](https://github.com/tehsinchen/JoyStick_PIstage/blob/main/demo/JoyStick_PIstage.gif)
 
-## Description of video
+## Video description
 
 In the beginning, a popup window asks for the serial numbers of PI stage. The program automatically detects the name of the stage and shows it on the title of the window, e.g., C-867 and E-518.
 In order to make the operation on the joystick consists with the live image from the camera, you can adjust:
