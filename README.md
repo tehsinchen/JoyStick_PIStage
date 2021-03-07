@@ -23,5 +23,7 @@ else:
 
 to change the direction and steps of increment (unit).
 
+The z-axis of the stage can be controlled by the mousewheel, e.g., in the end of video. As long as the mouse is inside the correct window, e.g., E-518, and not on the dot, the mousewheel can adjust the height of the stage. 
+
 The movement can be smoother by adjusting the velocity of stage, there will be no jittering if a good combination of unit and velocity is found.
 
