@@ -1,7 +1,7 @@
 # JoyStick_PIstage
 
 In this work, the joystick made by tkinter controls the PI stage.
-![image](https://github.com/tehsinchen/JoyStick_PIstage/blob/main/demo/JoyStick_PIstage.gif)
+![image](https://github.com/tehsinchen/JoyStick_PIstage/blob/main/demo/JoyStick_PIStage.gif)
 
 ## Video description
 
