@@ -14,14 +14,20 @@ self.y = self.stage.axes[0]
 for changing the axes controlled by joystick, and
 ```
 if self.nb_axis == 3:
-    self.increment_x = -self.increment_x
-    unit = 0.5
+    time_unit = 10
+    increment_x = -self.increment_x
+    increment_y = self.increment_y
+    unit = self.stage.qVEL(self.x)[self.x]
 else:
-    unit = 0.005
-    self.increment_y = -self.increment_y
+    unit = 0.05
+    time_unit = 500
+    increment_x = self.increment_x
+    increment_y = -self.increment_y
+    self.stage.VEL(self.x, unit*abs(increment_x))
+    self.stage.VEL(self.y, unit*abs(increment_y))
 ```  
 
-to change the direction and steps of increment (unit).
+to change the direction (self.increment) and steps (unit).
 
 The z-axis of the stage can be controlled by the mousewheel, i.e., in the end of the video. As long as the mouse is inside the correct window, in this case E-518, and not on the dot, the mousewheel can adjust the height of the stage. 
 
