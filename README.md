@@ -14,22 +14,21 @@ self.y = self.stage.axes[0]
 for changing the axes controlled by joystick, and
 ```
 if self.nb_axis == 3:
-    time_unit = 10
     increment_x = -self.increment_x
-    increment_y = self.increment_y
-    unit = self.stage.qVEL(self.x)[self.x]
-else:
-    unit = 0.05
-    time_unit = 500
-    increment_x = self.increment_x
     increment_y = -self.increment_y
-    self.stage.VEL(self.x, unit*abs(increment_x))
-    self.stage.VEL(self.y, unit*abs(increment_y))
+    unit_x = unit_y = self.stage.qVEL(self.x)[self.x] * 4
+ else:
+     increment_x = self.increment_x
+     increment_y = self.increment_y
+     unit_x = 0.02 * (1 + abs(increment_x))
+     unit_y = 0.02 * (1 + abs(increment_y))
+     self.stage.VEL(self.x, unit_x * abs(increment_x))
+     self.stage.VEL(self.y, unit_y * abs(increment_y))
 ```  
 
-to change the direction (self.increment) and steps (unit).
+to change the direction (+/- of self.increment) and steps (unit).
 
-The z-axis of the stage can be controlled by the mousewheel, i.e., in the end of the video. As long as the mouse is inside the correct window, in this case: E-518 and not on the dot, the mousewheel can adjust the height of the stage. 
+The z-axis of the stage can be controlled by the mousewheel, i.e., in the end of the video. As long as the mouse is inside the correct window, in this case: E-518, and not on the dot, the mousewheel can adjust the height of the stage. 
 
-The movement can be smoother by adjusting the velocity of stage, there will be no jittering if a good combination of unit and velocity is found.
+The movement can be smoother by adjusting the unit and velocity of stage, there will be no jittering if a good combination of them is found.
 
